@@ -1,0 +1,118 @@
+.container {
+   background-color: var(--c-secondary);
+   margin: 3.5rem;
+   box-shadow: 0 1rem 3rem var(--c-gray-2);
+   overflow: hidden;
+   @include respond(576) {
+      margin: 0;
+   }
+}
+
+.navigation {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 0%;
+   overflow: hidden;
+   transition: height 300ms;
+   z-index: 15;
+   &__iconBox {
+      width: 7rem;
+      height: 7rem;
+      position: fixed;
+      top: 6.5rem;
+      left: 6.5rem;
+      z-index: 22;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      cursor: pointer;
+      box-shadow: 0 0.5rem 2rem 0.2rem rgba($color: #000000, $alpha: 0.3);
+      @include respond(576) {
+         top: 3rem;
+         left: 3rem;
+      }
+   }
+   &__icon {
+      width: 70%;
+      height: 0.4rem;
+      background-color: var(--c-gray-3);
+      position: absolute;
+      top: calc(50% - 0.2rem);
+      left: calc(50% - (70% / 2));
+      &::before,
+      &::after {
+         content: '';
+         background-color: var(--c-gray-3);
+         width: 100%;
+         height: 0.4rem;
+         position: absolute;
+         transition: var(--transition-s);
+      }
+      &::before {
+         top: -1.2rem;
+      }
+      &::after {
+         top: 1.2rem;
+      }
+   }
+   &__bg {
+      width: calc(100% - 7rem);
+      height: calc(100% - 7rem);
+      background: url('../assets/img/navbar-bg-sm.jpg') center no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(120%);
+      @include imgResp {
+         background: url('../assets/img/navbar-bg.jpg') center no-repeat;
+         background-size: cover;
+      }
+      @include respond(576) {
+         width: 100%;
+         height: 100%;
+      }
+   }
+}
+.navigation.navigation--change {
+   height: 100%;
+   background-color: rgba($color: #fff, $alpha: 0.8);
+}
+.navigation--change .navigation__iconBox {
+   left: 92%;
+   @include respond(768) {
+      left: 80%;
+   }
+}
+.navigation--change .navigation__icon {
+   background-color: transparent;
+   &::before {
+      top: 0;
+      transform: rotate(225deg);
+   }
+   &::after {
+      top: 0;
+      transform: rotate(-225deg);
+   }
+}
+.navigation--change .navigation__bg {
+   transform: translate(-50%, -50%) translateY(0);
+}
+
+.footer {
+   width: 100%;
+   padding: 4rem 0;
+   background-color: var(--c-gray-3);
+   @include respond(576) {
+      padding: 4rem;
+   }
+}
+
+.copyright {
+   margin-top: 4rem;
+   text-align: center;
+   color: #fff;
+   font-size: 1.5rem;
+   letter-spacing: 0.1rem;
+}

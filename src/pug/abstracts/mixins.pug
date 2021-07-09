@@ -1,0 +1,62 @@
+mixin imgRespons(style,name,type,imgs,imgl)
+   img(class=style srcset=`assets/img/${imgs[0]}.${type} ${imgs[1]}, assets/img/${imgl[0]}.${type} ${imgl[1]}` sizes=`(max-width: 56.25em) ${imgl[2]}, (max-width: 37.5em) ${imgl[3]}, ${imgl[4]}` src=`assets/img/${imgl[0]}.${type}`, alt=name)
+
+mixin tourCard(title, services, price)
+   article.tour-card 
+      .tour-card__side.tour-card__side--front
+         if block 
+            block 
+         else 
+            p NO IMAGE PROVIDED
+         h3.tour-card__title #{title}
+         ul.tour-card__list
+            each service in services
+               li.tour-card__list-item #{service}
+         button.btn.btn--white-tr.tour-card__btn--price(type="submit") Price &gt;&gt;
+      .tour-card__side.tour-card__side--back 
+         button.btn.btn--white-tr.tour-card__btn--back(type="submit") &lt;&lt; Back
+         .tour-card__price-box
+            h4.tour-card__price $#{price}
+            a.btn--text.btn--white.btn--rounded.tour-card__btn--booking(href="#") booking
+
+mixin reviewCard(title, img)
+   article.story 
+      +imgRespons('story__img', 'Story image', 'jpg', img[0], img[1])
+      .story__desc
+         h3.story__title #{title}
+         if block 
+            block
+         else 
+            p.story__paragraph NO DESCRIPTION PROVIDED
+
+
+mixin form
+   form.form 
+      .form__group
+         label.form__label(for="inputName") Full Name*
+         input.form__control(id="inputName" type="text", name="name" placeholder="Enter Your Name" required)
+      .form__groups 
+         .form__group
+            label.form__label(for="inputEmail") Email*
+            input.form__control(id="inputEmail" type="email", name="email" placeholder="Enter Your Email" required)
+         .form__group
+            label.form__label(for="inputNumber") Phone
+            input.form__control(id="inputNumber" type="text", name="phone" placeholder="Enter Phone Number" required)
+      .form__group
+         label.form__label(for="inputMessage") Message
+         textarea.form__control(id="inputMessage" name="message" placeholder="Your Message")
+      button.btn.btn--block.btn--gray.form__btn(type="submit") Submit
+
+mixin nav(style)
+   nav(class=`${style}`)
+      ul(class=`${style}__list`)
+         li(class=`${style}__item`)
+            a(class=`${style}__link` href="#") home
+         li(class=`${style}__item`)
+            a(class=`${style}__link` href="#") tours
+         li(class=`${style}__item`)
+            a(class=`${style}__link` href="#") about us
+         li(class=`${style}__item`)
+            a(class=`${style}__link` href="#") offer
+         li(class=`${style}__item`)
+            a(class=`${style}__link` href="#") contact

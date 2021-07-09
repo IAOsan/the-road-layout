@@ -1,0 +1,40 @@
+body {
+   font-family: var(--f-main);
+   font-weight: 400;
+   line-height: 1.6;
+}
+
+.heading {
+   &--1 {
+      font-size: 8rem;
+      color: #fff;
+      @include respond(768) {
+         font-size: 7rem;
+      }
+      @include respond(576) {
+         font-size: 11vw;
+      }
+   }
+   &--2,
+   &--2-primary,
+   &--2-white {
+      font-size: 8rem;
+      text-align: center;
+      margin-bottom: 8rem;
+      text-transform: capitalize;
+      @include respond(992) {
+         font-size: 6.8rem;
+      }
+      @include respond(576) {
+         font-size: 8vw;
+      }
+      &-primary {
+         color: var(--c-primary);
+         text-shadow: 0 0.1rem 0.2rem var(--c-primary);
+      }
+      &-white {
+         text-shadow: 0 0.1rem 0.2rem var(--c-gray-2);
+         color: #fff;
+      }
+   }
+}

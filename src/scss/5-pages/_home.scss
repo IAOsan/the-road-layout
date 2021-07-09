@@ -1,0 +1,199 @@
+.header {
+   width: 100%;
+   height: calc(100vh - (3.5rem * 2));
+   background: linear-gradient(rgba(18, 113, 255, 0.5), rgba(18, 113, 255, 0.3)),
+      url('../assets/img/header-bg-sm.jpg') center no-repeat;
+   background-size: cover;
+   position: relative;
+   @include imgResp {
+      background: linear-gradient(
+            rgba(18, 113, 255, 0.5),
+            rgba(18, 113, 255, 0.3)
+         ),
+         url('../assets/img/header-bg.jpg') center no-repeat;
+      background-size: cover;
+      perspective: 100rem;
+   }
+   @include respond(768) {
+      min-height: 100vh;
+   }
+   &__text-box {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      text-shadow: 0 0.3rem 0.5rem var(--c-gray-3);
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      transform: translateY(-50%);
+      @include respond(768) {
+         width: 80%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         z-index: 5;
+      }
+   }
+   &__paragraph {
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--c-secondary);
+      max-width: 70rem;
+      margin: 0 auto;
+      @include respond(992) {
+         font-size: 2.6rem;
+      }
+      @include respond(576) {
+         display: none;
+      }
+   }
+   &__img {
+      display: inline-block;
+      max-width: 35%;
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: rotateY(180deg) translateY(-50%);
+      filter: contrast(0.8) saturate(0.8);
+      animation: img-float 120s linear infinite;
+   }
+   &__logo-box {
+      position: absolute;
+      top: 4rem;
+      right: 4rem;
+      @include respond(576) {
+         right: 2rem;
+         top: 5rem;
+      }
+   }
+   &__logo {
+      text-align: center;
+      span {
+         font-size: 2rem;
+         font-weight: 900;
+         color: var(--c-primary);
+         text-transform: uppercase;
+         background-color: #fff;
+         // width: 3.5rem;
+         // height: 3.5rem;
+         padding: 0.1rem 1rem;
+         display: inline-block;
+         border-radius: 50%;
+         margin: 0 0.8rem;
+         &:nth-of-type(1) {
+            animation: dropLetter 5s 0.1s ease-in-out infinite;
+         }
+         &:nth-of-type(2) {
+            animation: dropLetter 5s 0.2s ease-in-out infinite;
+         }
+         &:nth-of-type(3) {
+            animation: dropLetter 5s 0.3s ease-in-out infinite;
+         }
+         &:nth-of-type(4) {
+            animation: dropLetter 5s 0.4s ease-in-out infinite;
+         }
+         &:nth-of-type(5) {
+            animation: dropLetter 5s 0.5s ease-in-out infinite;
+         }
+         &:nth-of-type(6) {
+            animation: dropLetter 5s 0.6s ease-in-out infinite;
+         }
+         &:nth-of-type(7) {
+            animation: dropLetter 5s 0.7s ease-in-out infinite;
+         }
+      }
+   }
+}
+
+.popular-tours {
+   width: 100%;
+   padding: 5rem 0 10rem 0;
+   @include respond(992) {
+      height: auto;
+   }
+   @include respond(768) {
+      padding: 10rem 0;
+   }
+   &__grid {
+      // border: var(--border);
+      // flex
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      @include respond(992) {
+         flex-direction: column;
+      }
+      @include respond(576) {
+         margin: 0 auto;
+         width: 75%;
+      }
+   }
+}
+
+.customers-stories {
+   height: 100vh;
+   position: relative;
+   overflow: hidden;
+   @include respond(992) {
+      height: auto;
+      padding: 10rem 0;
+   }
+   &__bg-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+   }
+   &__bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+   }
+   &__grid {
+      width: 100%;
+      height: 100%;
+      // flex
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+   }
+}
+
+.contact {
+   width: 100%;
+   padding: 15rem 0 20rem 0;
+   background: url('../assets/img/contact-us-bg-sm.png') center no-repeat;
+   background-size: cover;
+   animation: contact-bg 40s infinite;
+   @include imgResp {
+      background: url('../assets/img/contact-us-bg.png') center no-repeat;
+      background-size: cover;
+   }
+   @include respond(1600) {
+      padding: 12rem 0 20rem 0;
+   }
+   @include respond(992) {
+      padding: 10rem 0 17rem 0;
+   }
+   &__heading {
+      font-size: 7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      @include respond(576) {
+         font-size: 8vw;
+      }
+   }
+   &__form {
+      @include respond(992) {
+         width: 65%;
+         margin: 0 auto;
+      }
+      @include respond(768) {
+         width: 90%;
+      }
+   }
+}

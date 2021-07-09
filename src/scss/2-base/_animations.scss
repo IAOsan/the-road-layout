@@ -1,0 +1,61 @@
+@keyframes dropLetter {
+   0% {
+      transform: translateY(0);
+   }
+   10% {
+      transform: translateY(0);
+   }
+   15% {
+      transform: translateY(-100%);
+   }
+   20% {
+      transform: translateY(0);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@keyframes img-float {
+   0% {
+      transform: translateY(-50%) translateZ(40rem) rotateY(180deg);
+      opacity: 1;
+   }
+   40% {
+      transform: translateY(-50%) translateZ(-500rem) translateX(150rem)
+         rotateY(180deg);
+      opacity: 0.8;
+   }
+   70% {
+      transform: translateY(-50%) translateZ(-1500rem) translateX(800rem)
+         rotateY(180deg);
+      opacity: 0.6;
+   }
+   80% {
+      transform: translateY(-50%) translateZ(-50rem) translateX(100rem)
+         rotateY(180deg);
+      opacity: 0.8;
+   }
+   100% {
+      transform: translateY(-50%) translateZ(40rem) rotateY(180deg);
+      opacity: 1;
+   }
+}
+
+@keyframes contact-bg {
+   0% {
+      background-color: #3d3d3d;
+   }
+   25% {
+      background-color: #ced8e4;
+   }
+   50% {
+      background-color: #1e81f3;
+   }
+   75% {
+      background-color: #ff7842;
+   }
+   100% {
+      background-color: #3d3d3d;
+   }
+}
